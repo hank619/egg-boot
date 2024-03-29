@@ -27,11 +27,11 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "start-prod": "EGG_SERVER_ENV=production egg-scripts start --title=egg-server-egg-boot",
-    "startd-prod": "EGG_SERVER_ENV=production egg-scripts start --daemon --title=egg-server-egg-boot",
+    "start-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-scripts start --title=egg-server-egg-boot",
+    "startd-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-scripts start --daemon --title=egg-server-egg-boot",
     "stop": "egg-scripts stop --title=egg-server-egg-boot",
-    "dev-local": "EGG_SERVER_ENV=local egg-bin dev",
-    "dev-prod": "EGG_SERVER_ENV=production egg-bin dev",
+    "dev-local": "EGG_SERVER_ENV=local dotenv -e .env.local egg-bin dev",
+    "dev-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-bin dev",
     "test": "npm run lint -- --fix && npm run test:local",
     "test:local": "egg-bin test",
     "cov": "egg-bin cov",
