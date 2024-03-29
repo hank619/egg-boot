@@ -4,18 +4,19 @@
  * @Description:
  */
 const Controller = require("egg").Controller;
+const { z } = require("zod");
 
-const createRule = {
-  url: "string",
-};
+const scheme = z.object({
+  url: z.string(),
+});
 
-class UserController extends Controller {
+class ShortUrlController extends Controller {
   async create() {
-    const { config, ctx } = this;
-    ctx.validate(createRule, ctx.realStatus.body);
+    const ctx = this.ctx;
+    scheme.parse(ctx.request.body);
     const { url } = ctx.request.body;
     const key = await ctx.service.shortUrl.create(url);
-    ctx.success(`${config.serverUrl}/${key}`);
+    ctx.success(`https://short-link.matrixyf.top/api/v1/short-url/${key}`);
   }
 
   async show() {
@@ -25,4 +26,4 @@ class UserController extends Controller {
   }
 }
 
-module.exports = UserController;
+module.exports = ShortUrlController;

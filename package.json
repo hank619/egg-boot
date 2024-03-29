@@ -10,9 +10,8 @@
     "@prisma/client": "^5.11.0",
     "egg": "^3.17.5",
     "egg-scripts": "2",
-    "egg-sequelize": "^6.0.0",
     "egg-validate": "^2.0.2",
-    "mysql2": "^3.7.0"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "dotenv-cli": "^7.4.1",
@@ -20,8 +19,7 @@
     "egg-mock": "5",
     "eslint": "8",
     "eslint-config-egg": "13",
-    "prisma": "^5.11.0",
-    "sequelize-cli": "^6.6.2"
+    "prisma": "^5.11.0"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -30,8 +28,8 @@
     "start-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-scripts start --title=egg-server-egg-boot",
     "startd-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-scripts start --daemon --title=egg-server-egg-boot",
     "stop": "egg-scripts stop --title=egg-server-egg-boot",
-    "dev-local": "EGG_SERVER_ENV=local dotenv -e .env.local egg-bin dev",
-    "dev-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-bin dev",
+    "run-local": "EGG_SERVER_ENV=local dotenv -e .env.local egg-bin dev",
+    "run-prod": "EGG_SERVER_ENV=production dotenv -e .env.production egg-bin dev",
     "test": "npm run lint -- --fix && npm run test:local",
     "test:local": "egg-bin test",
     "cov": "egg-bin cov",

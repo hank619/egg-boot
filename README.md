@@ -37,5 +37,6 @@ npm stop
 
 
 ## ENV
-EGG_SERVER_ENV is only for config.[xxx].js
-dotenv with env.[xxx] is for process.env, mainly for prisma
+- EGG_SERVER_ENV is mainly for config.[xxx].js and other features like logs
+- dotenv with env.[xxx] is for process.env, mainly for prisma
+- forget NODE_ENV for eggjs
