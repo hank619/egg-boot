@@ -34,3 +34,8 @@ npm stop
 - Use `npm test` to run unit test.
 
 [egg]: https://eggjs.org
+
+
+## ENV
+EGG_SERVER_ENV is only for config.[xxx].js
+dotenv with env.[xxx] is for process.env, mainly for prisma

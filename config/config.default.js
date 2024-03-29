@@ -1,6 +1,4 @@
 /* eslint valid-jsdoc: "off" */
-const dbConfig = require("../database/config.json");
-
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -26,11 +24,6 @@ function getAppConfig(appInfo) {
 
   // add your middleware config here
   config.middleware = [];
-
-  // sequelize默认只会读取config.[env].js中的配置
-  // 如果要使用sequelize-cli生成的/database/config.json中的配置，必须要这么做，单独配置一遍
-  // sequelize
-  config.sequelize = dbConfig[appInfo.env];
 
   // 默认会打开csrf，如果postman模拟的话，需要关闭这个
   config.security = {
